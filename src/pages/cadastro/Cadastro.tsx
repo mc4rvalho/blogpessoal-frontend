@@ -19,15 +19,15 @@ export function Cadastro() {
     foto: "",
   });
 
+  function retornar() {
+    navigate("/");
+  }
+
   useEffect(() => {
     if (usuario.id !== 0) {
       retornar();
     }
   }, [usuario]);
-
-  function retornar() {
-    navigate("/");
-  }
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setUsuario({
@@ -49,7 +49,7 @@ export function Cadastro() {
       try {
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario);
         alert("Usuário cadastrado com sucesso!");
-      } catch (error) {
+      } catch {
         alert("Erro ao cadastrar o usuário!");
       }
     } else {
