@@ -22,10 +22,11 @@ export function ListaTemas() {
       alert("Você precisa estar logado!");
       navigate("/");
     }
-  }, [token]);
+  }, [token, navigate]);
 
   useEffect(() => {
     buscarTemas();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [temas.length]);
 
   async function buscarTemas() {
