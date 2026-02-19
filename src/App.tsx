@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Cadastro } from "./pages/cadastro/Cadastro";
 import { Login } from "./pages/login/Login";
 import { AuthProvider } from "./contexts/AuthContext";
-import ListaTemas from "./components/tema/listatemas/ListaTemas";
+import { ListaTemas } from "./components/tema/listatemas/ListaTemas";
 
 export function App() {
   return (
