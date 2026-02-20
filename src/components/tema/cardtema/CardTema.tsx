@@ -22,7 +22,7 @@ export function CardTema({tema}: CardTemaProps) {
         </Link>
 
         <Link
-          to=""
+          to={`/deletartema/${tema.id}`}
           className="w-full text-slate-100 bg-red-400 hover:bg-red-700 flex items-center justify-center"
         >
           <button>Deletar</button>
