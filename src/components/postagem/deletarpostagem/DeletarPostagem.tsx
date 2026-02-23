@@ -1,0 +1,20 @@
+export function DeletarPostagem() {
+  return (
+    <div className="container w-1/3 mx-auto">
+      <h1 className="text-4xl text-center my-4">Deletar Postagem</h1>
+      <p className="text-center font-semibold mb-4">Você tem certeza de que deseja apagar a postagem a seguir?</p>
+
+      <div className="border flex flex-col rounded-2xl overflow-hidden justify-between">
+        <header className="py-2 px-6 bg-indigo-600 text-white font-bold text-2xl">Postagem</header>
+        <div className="p-4">
+          <p className="text-xl h-full">Título da Postagem</p>
+          <p>Texto da Postagem</p>
+        </div>
+        <div className="flex">
+          <button className="text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2">Não</button>
+          <button className="text-slate-100 bg-indigo-400 hover:bg-indigo-600 w-full justify-center flex items-center">Sim</button>
+        </div>
+      </div>
+    </div>
+  );
+}
