@@ -1,4 +1,5 @@
 import { ListaPostagens } from "../../components/postagem/listapostagens/ListaPostagens";
+import { ModalPostagem } from "../../components/postagem/modalpostagem/ModalPostagem";
 
 export function Home() {
   return (
@@ -10,9 +11,7 @@ export function Home() {
             <p className="text-xl">Expresse aqui seus pensamentos e opiniões</p>
 
             <div className="flex justify-around gap-4">
-              <div className="rounded border-2 border-solid border-white px-4 py-2 text-white">
-                Nova Postagem
-              </div>
+              <ModalPostagem />
             </div>
           </div>
 
