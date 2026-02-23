@@ -34,7 +34,7 @@ export function CardPostagem({ postagem }: CardPostagensProps) {
       </div>
       <div className="flex">
         <Link
-          to=""
+          to={`/editarpostagem/${postagem.id}`}
           className="flex w-full items-center justify-center bg-indigo-400 py-2 text-white hover:bg-indigo-800"
         >
           <button>Editar</button>
