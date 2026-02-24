@@ -21,7 +21,6 @@ export function Navbar() {
     component = (
       <div className="flex w-full justify-center bg-lime-800 py-4 text-white">
         <div className="container mx-8 flex justify-between text-lg">
-          {/* GRUPO 1: LADO ESQUERDO (Logo + Links de Navegação) */}
           <div className="flex items-center gap-6">
             {usuario.token !== "" ? (
               <Link to="/home" className="flex items-center gap-2">
@@ -38,7 +37,6 @@ export function Navbar() {
               "Retorne para logar."
             )}
 
-            {/* Links movidos para a esquerda para facilitar a navegação */}
             <div className="flex gap-4">
               <Link to="/postagens" className="hover:underline">
                 Postagens
@@ -52,9 +50,7 @@ export function Navbar() {
             </div>
           </div>
 
-          {/* GRUPO 2: LADO DIREITO (Dados do Usuário + Sair) */}
           <div className="flex items-center gap-4">
-            {/* Reordenei: Saudação -> Foto -> Sair */}
             <span>{`Olá, ${usuario.nome}`}</span>
 
             <Link to="/perfil" className="hover:underline">
