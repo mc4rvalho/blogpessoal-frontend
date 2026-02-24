@@ -79,7 +79,7 @@ export function Login() {
           </div>
           <button
             type="submit"
-            className="flex w-1/2 justify-center rounded bg-lime-600 py-2 text-white hover:bg-indigo-900"
+            className="flex w-1/2 justify-center rounded bg-lime-600 py-2 text-white hover:bg-lime-800"
           >
             {isLoading ? (
               <ClipLoader color="#3f6212" size={24} />

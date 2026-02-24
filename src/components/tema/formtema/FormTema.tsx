@@ -11,6 +11,7 @@ import type { Tema } from "../../../models/Tema";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { ClipLoader } from "react-spinners";
+import { ToastAlerta } from "../../../util/ToastAlerta";
 
 export function FormTema() {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ export function FormTema() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado!");
+      ToastAlerta("Você precisa estar logado", "info");
       navigate("/");
     }
   }, [token, navigate]);

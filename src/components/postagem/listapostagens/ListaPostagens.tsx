@@ -1,17 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { SyncLoader } from "react-spinners";
 import { AuthContext } from "../../../contexts/AuthContext";
 import type { Postagem } from "../../../models/Postagem";
 import { buscar } from "../../../services/Service";
 import { CardPostagem } from "../cardpostagem/CardPostagem";
+import { ToastAlerta } from "../../../util/ToastAlerta";
 
 export function ListaPostagens() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
   const [postagens, setPostagens] = useState<Postagem[]>([]);
 
   const { usuario, handleLogout } = useContext(AuthContext);
@@ -19,7 +20,7 @@ export function ListaPostagens() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado!");
+      ToastAlerta("Você precisa estar logado", "info");
       navigate("/");
     }
   }, [token, navigate]);
@@ -45,6 +46,14 @@ export function ListaPostagens() {
     }
   }
 
+  let postagensExibidas = postagens;
+
+  if (location.pathname === "/postagens") {
+    postagensExibidas = postagens.filter(
+      (postagem) => postagem.usuario?.id === usuario.id,
+    );
+  }
+
   return (
     <>
       {isLoading && (
@@ -55,14 +64,17 @@ export function ListaPostagens() {
 
       <div className="my-4 flex w-full justify-center">
         <div className="container flex flex-col">
-          {!isLoading && postagens.length === 0 && (
+          {!isLoading && postagensExibidas.length === 0 && (
             <span className="my-8 text-center text-3xl">
-              Nenhuma Postagem foi encontrada!
+              {location.pathname === "/postagens"
+                ? "Você ainda não fez nenhuma postagem!"
+                : "Nenhuma Postagem foi encontrada!"}{" "}
+              
             </span>
           )}
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {postagens.map((postagem) => (
+            {postagensExibidas.map((postagem) => (
               <CardPostagem key={postagem.id} postagem={postagem} />
             ))}
           </div>

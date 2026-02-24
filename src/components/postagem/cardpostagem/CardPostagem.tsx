@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthContext";
 import type { Postagem } from "../../../models/Postagem";
 
 interface CardPostagensProps {
@@ -6,6 +8,8 @@ interface CardPostagensProps {
 }
 
 export function CardPostagem({ postagem }: CardPostagensProps) {
+  const { usuario } = useContext(AuthContext);
+
   return (
     <div className="flex flex-col justify-between overflow-hidden rounded border border-slate-900">
       <div>
@@ -39,20 +43,23 @@ export function CardPostagem({ postagem }: CardPostagensProps) {
           </p>
         </div>
       </div>
-      <div className="flex">
-        <Link
-          to={`/editarpostagem/${postagem.id}`}
-          className="flex w-full items-center justify-center bg-lime-600 py-2 text-white hover:bg-lime-800 hover:font-bold"
-        >
-          <button>Editar</button>
-        </Link>
-        <Link
-          to={`/deletarpostagem/${postagem.id}`}
-          className="flex w-full items-center justify-center bg-red-400 text-white hover:bg-red-700 hover:font-bold"
-        >
-          <button>Deletar</button>
-        </Link>
-      </div>
+
+      {usuario.id === postagem.usuario?.id && (
+        <div className="flex">
+          <Link
+            to={`/editarpostagem/${postagem.id}`}
+            className="flex w-full items-center justify-center bg-lime-600 py-2 text-white hover:bg-lime-800 hover:font-bold"
+          >
+            <button>Editar</button>
+          </Link>
+          <Link
+            to={`/deletarpostagem/${postagem.id}`}
+            className="flex w-full items-center justify-center bg-red-400 text-white hover:bg-red-700 hover:font-bold"
+          >
+            <button>Deletar</button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 }
