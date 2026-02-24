@@ -40,7 +40,7 @@ export function CardPostagem({ postagem }: CardPostagensProps) {
           <button>Editar</button>
         </Link>
         <Link
-          to=""
+          to={`/deletarpostagem/${postagem.id}`}
           className="flex w-full items-center justify-center bg-red-400 text-white hover:bg-red-700"
         >
           <button>Deletar</button>
