@@ -39,34 +39,38 @@ export function Login() {
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold ">
+      <div className="grid h-screen grid-cols-1 place-items-center font-bold lg:grid-cols-2">
         <form
-          className="flex justify-center items-center flex-col w-1/2 gap-4"
+          className="flex w-1/2 flex-col items-center justify-center gap-4"
           onSubmit={login}
         >
-          <h2 className="text-slate-900 text-5xl ">Entrar</h2>
-          <div className="flex flex-col w-full">
-            <label htmlFor="usuario">Usuário</label>
+          <h2 className="text-5xl text-lime-800">Entrar</h2>
+          <div className="flex w-full flex-col">
+            <label htmlFor="usuario" className="font-bold text-lime-800">
+              Usuário
+            </label>
             <input
               type="text"
               id="usuario"
               name="usuario"
               placeholder="Usuario"
-              className="border-2 border-slate-700 rounded p-2"
+              className="rounded border-2 border-lime-600 p-2 focus:border-lime-800 focus:ring-1 focus:ring-lime-800 focus:outline-none"
               value={usuarioLogin.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 atualizarEstado(e)
               }
             />
           </div>
-          <div className="flex flex-col w-full">
-            <label htmlFor="senha">Senha</label>
+          <div className="flex w-full flex-col">
+            <label htmlFor="senha" className="font-bold text-lime-800">
+              Senha
+            </label>
             <input
               type="password"
               id="senha"
               name="senha"
               placeholder="Senha"
-              className="border-2 border-slate-700 rounded p-2"
+              className="rounded border-2 border-lime-600 p-2 focus:border-lime-800 focus:ring-1 focus:ring-lime-800 focus:outline-none"
               value={usuarioLogin.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 atualizarEstado(e)
@@ -75,29 +79,25 @@ export function Login() {
           </div>
           <button
             type="submit"
-            className="rounded bg-indigo-400 flex justify-center
-                                   hover:bg-indigo-900 text-white w-1/2 py-2"
+            className="flex w-1/2 justify-center rounded bg-lime-600 py-2 text-white hover:bg-indigo-900"
           >
             {isLoading ? (
-              <ClipLoader color="#ffffff" size={24} />
+              <ClipLoader color="#3f6212" size={24} />
             ) : (
               <span>Entrar</span>
             )}
           </button>
 
-          <hr className="border-slate-800 w-full" />
+          <hr className="w-full border-slate-800" />
 
           <p>
             Ainda não tem uma conta?{" "}
-            <Link to="/cadastro" className="text-indigo-800 hover:underline">
+            <Link to="/cadastro" className="text-lime-600 hover:underline">
               Cadastre-se
             </Link>
           </p>
         </form>
-        <div
-          className="bg-[url('https://i.imgur.com/ZZFAmzo.jpg')] lg:block hidden bg-no-repeat 
-                            w-full min-h-screen bg-cover bg-center"
-        ></div>
+        <div className="hidden min-h-screen w-full bg-[url('https://i.imgur.com/ZZFAmzo.jpg')] bg-cover bg-center bg-no-repeat lg:block"></div>
       </div>
     </>
   );

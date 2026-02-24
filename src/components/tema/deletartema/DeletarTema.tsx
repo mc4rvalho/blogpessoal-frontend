@@ -38,10 +38,10 @@ export function DeletarTema() {
 
   useEffect(() => {
     if (id !== undefined) {
-      buscarPorId(id)
+      buscarPorId(id);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
 
   async function deletarTema() {
     setIsLoading(true);
@@ -90,7 +90,7 @@ export function DeletarTema() {
             onClick={deletarTema}
           >
             {isLoading ? (
-              <ClipLoader color="#ffffff" size={24} />
+              <ClipLoader color="#3f6212" size={24} />
             ) : (
               <span>Sim</span>
             )}

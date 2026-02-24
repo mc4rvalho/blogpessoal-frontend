@@ -104,23 +104,25 @@ export function FormTema() {
 
       <form className="flex w-1/2 flex-col gap-4" onSubmit={gerarNovoTema}>
         <div className="flex flex-col gap-2">
-          <label htmlFor="descricao">Descrição do Tema</label>
+          <label htmlFor="descricao" className="font-bold">
+            Descrição do Tema
+          </label>
           <input
             type="text"
             placeholder="Descreva aqui seu tema"
             name="descricao"
-            className="rounded border-2 border-slate-700 p-2"
+            className="rounded border-2 border-lime-600 p-2 focus:border-lime-800 focus:ring-1 focus:ring-lime-800 focus:outline-none"
             value={tema.descricao}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
 
         <button
-          className="mx-auto flex w-1/2 justify-center rounded bg-indigo-400 py-2 text-slate-100 hover:bg-indigo-800"
+          className="mx-auto flex w-1/2 justify-center rounded bg-lime-600 py-2 text-white hover:bg-lime-800"
           type="submit"
         >
           {isLoading ? (
-            <ClipLoader color="#ffffff" size={24} />
+            <ClipLoader color="#3f6212" size={24} />
           ) : (
             <span>{id === undefined ? "Cadastrar" : "Atualizar"}</span>
           )}

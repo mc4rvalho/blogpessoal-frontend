@@ -8,7 +8,7 @@ export function ModalPostagem() {
     <>
       <Popup
         trigger={
-          <button className="rounded border px-4 py-2 hover:bg-white hover:text-indigo-800">
+          <button className="rounded border px-4 py-2 hover:bg-lime-800">
             Nova Postagem
           </button>
         }

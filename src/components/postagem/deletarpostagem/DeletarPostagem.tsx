@@ -99,7 +99,7 @@ export function DeletarPostagem() {
             onClick={deletarPostagem}
           >
             {isLoading ? (
-              <ClipLoader color="#ffff" size={24} />
+              <ClipLoader color="#3f6212" size={24} />
             ) : (
               <span>Sim</span>
             )}

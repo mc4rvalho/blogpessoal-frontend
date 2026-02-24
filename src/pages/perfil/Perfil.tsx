@@ -34,7 +34,7 @@ export function Perfil() {
           alt={`Foto de perfil de ${usuario.nome}`}
         />
 
-        <div className="relative mt-[-6rem] flex h-72 flex-col items-center justify-center bg-sky-500 text-2xl text-white">
+        <div className="relative mt-[-6rem] flex h-72 flex-col items-center justify-center bg-lime-400 text-2xl text-white">
           <p>Nome: {usuario.nome} </p>
           <p>Email: {usuario.usuario}</p>
         </div>

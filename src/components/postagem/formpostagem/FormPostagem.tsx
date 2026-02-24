@@ -148,41 +148,45 @@ export function FormPostagem() {
 
   return (
     <div className="container mx-auto flex flex-col items-center">
-      <h1 className="my-8 text-center text-4xl">
+      <h1 className="my-8 text-center text-4xl font-bold text-lime-800">
         {id !== undefined ? "Editar Postagem" : "Cadastrar Postagem"}
       </h1>
 
       <form className="flex w-1/2 flex-col gap-4" onSubmit={gerarNovaPostagem}>
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Título da Postagem</label>
+          <label htmlFor="titulo" className="font-bold text-lime-800">
+            Título da Postagem
+          </label>
           <input
             type="text"
             placeholder="Titulo"
             name="titulo"
             required
-            className="rounded border-2 border-slate-700 p-2"
+            className="rounded border-2 border-lime-600 p-2 focus:border-lime-800 focus:ring-1 focus:ring-lime-800 focus:outline-none"
             value={postagem.titulo}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Texto da Postagem</label>
+          <label htmlFor="titulo" className="font-bold text-lime-800">
+            Texto da Postagem
+          </label>
           <input
             type="text"
             placeholder="Texto"
             name="texto"
             required
-            className="rounded border-2 border-slate-700 p-2"
+            className="rounded border-2 border-lime-600 p-2 focus:border-lime-800 focus:ring-1 focus:ring-lime-800 focus:outline-none"
             value={postagem.texto}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
         <div className="flex flex-col gap-2">
-          <p>Tema da Postagem</p>
+          <p className="font-bold text-lime-800">Tema da Postagem</p>
           <select
             name="tema"
             id="tema"
-            className="rounded border border-slate-800 p-2"
+            className="rounded border-2 border-lime-600 p-2 focus:border-lime-800 focus:ring-1 focus:ring-lime-800 focus:outline-none"
             onChange={(e) => buscarTemaPorId(e.currentTarget.value)}
           >
             <option value="" selected disabled>
@@ -198,11 +202,11 @@ export function FormPostagem() {
         </div>
         <button
           type="submit"
-          className="mx-auto flex w-1/2 justify-center rounded bg-indigo-400 py-2 font-bold text-white hover:bg-indigo-800 disabled:bg-slate-200"
+          className="mx-auto flex w-1/2 justify-center rounded bg-lime-600 py-2 font-bold text-white hover:bg-lime-800 disabled:bg-slate-200"
           disabled={carregandoTema}
         >
           {isLoading ? (
-            <ClipLoader color="#ffffff" size={24} />
+            <ClipLoader color="#3f6212" size={24} />
           ) : (
             <span>{id === undefined ? "Cadastrar" : "Atualizar"}</span>
           )}

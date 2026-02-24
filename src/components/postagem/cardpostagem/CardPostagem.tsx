@@ -9,7 +9,7 @@ export function CardPostagem({ postagem }: CardPostagensProps) {
   return (
     <div className="flex flex-col justify-between overflow-hidden rounded border border-slate-900">
       <div>
-        <div className="flex w-full items-center gap-4 bg-indigo-900 px-4 py-2">
+        <div className="flex w-full items-center gap-4 bg-lime-800 px-4 py-2">
           <img
             src={
               postagem.usuario?.foto ||
@@ -26,7 +26,7 @@ export function CardPostagem({ postagem }: CardPostagensProps) {
             {postagem.usuario?.nome}
           </h3>
         </div>
-        <div className="p-4">
+        <div className="bg-slate-200 p-4">
           <h4 className="text-lg font-semibold uppercase">{postagem.titulo}</h4>
           <p>{postagem.texto}</p>
           <p>Tema: {postagem.tema?.descricao}</p>
@@ -42,7 +42,7 @@ export function CardPostagem({ postagem }: CardPostagensProps) {
       <div className="flex">
         <Link
           to={`/editarpostagem/${postagem.id}`}
-          className="flex w-full items-center justify-center bg-indigo-400 py-2 text-white hover:bg-indigo-900 hover:font-bold"
+          className="flex w-full items-center justify-center bg-lime-600 py-2 text-white hover:bg-lime-800 hover:font-bold"
         >
           <button>Editar</button>
         </Link>
