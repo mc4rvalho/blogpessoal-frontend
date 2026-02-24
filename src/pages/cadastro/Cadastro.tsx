@@ -83,8 +83,8 @@ export function Cadastro() {
               type="text"
               id="nome"
               name="nome"
-              placeholder="Nome"
-              className="rounded border-2 border-slate-700 p-2 focus:border-lime-800 focus:ring-1 focus:ring-lime-800 focus:outline-none"
+              placeholder="Digite o seu nome completo"
+              className="rounded border-2 border-lime-600 p-2 focus:border-lime-800 focus:ring-1 focus:ring-lime-800 focus:outline-none"
               value={usuario.nome}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 atualizarEstado(e)
@@ -99,8 +99,8 @@ export function Cadastro() {
               type="text"
               id="usuario"
               name="usuario"
-              placeholder="Usuario"
-              className="rounded border-2 border-slate-700 p-2 focus:border-lime-800 focus:ring-1 focus:ring-lime-800 focus:outline-none"
+              placeholder="Digite o seu e-mail"
+              className="rounded border-2 border-lime-600 p-2 focus:border-lime-800 focus:ring-1 focus:ring-lime-800 focus:outline-none"
               value={usuario.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 atualizarEstado(e)
@@ -115,8 +115,8 @@ export function Cadastro() {
               type="text"
               id="foto"
               name="foto"
-              placeholder="Foto"
-              className="rounded border-2 border-slate-700 p-2 focus:border-lime-800 focus:ring-1 focus:ring-lime-800 focus:outline-none"
+              placeholder="Digite o link para a sua foto"
+              className="rounded border-2 border-lime-600 p-2 focus:border-lime-800 focus:ring-1 focus:ring-lime-800 focus:outline-none"
               value={usuario.foto}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 atualizarEstado(e)
@@ -131,7 +131,7 @@ export function Cadastro() {
               type="password"
               id="senha"
               name="senha"
-              placeholder="Senha"
+              placeholder="Digite a sua senha"
               className="rounded border-2 border-lime-600 p-2 focus:border-lime-800 focus:ring-1 focus:ring-lime-800 focus:outline-none"
               value={usuario.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -147,7 +147,7 @@ export function Cadastro() {
               type="password"
               id="confirmarSenha"
               name="confirmarSenha"
-              placeholder="Confirmar Senha"
+              placeholder="Confirme a sua senha"
               className="rounded border-2 border-lime-600 p-2 focus:border-lime-800 focus:ring-1 focus:ring-lime-800 focus:outline-none"
               value={confirmarSenha}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
