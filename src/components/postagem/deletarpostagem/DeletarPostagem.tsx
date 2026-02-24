@@ -75,28 +75,28 @@ export function DeletarPostagem() {
 
   return (
     <div className="container mx-auto w-1/3">
-      <h1 className="my-4 text-center text-4xl">Deletar Postagem</h1>
-      <p className="mb-4 text-center font-semibold">
+      <h1 className="my-4 text-center text-4xl text-lime-800 font-bold">Deletar Postagem</h1>
+      <p className="mb-4 text-center font-semibold text-lime-800">
         Você tem certeza de que deseja apagar a postagem a seguir?
       </p>
 
       <div className="flex flex-col justify-between overflow-hidden rounded-2xl border">
-        <header className="bg-indigo-600 px-6 py-2 text-2xl font-bold text-white">
+        <header className="bg-lime-800 px-6 py-2 text-2xl font-bold text-white">
           Postagem
         </header>
-        <div className="p-4">
+        <div className="p-4 bg-slate-200">
           <p className="h-full text-xl">{postagem.titulo}</p>
           <p>{postagem.texto}</p>
         </div>
         <div className="flex">
           <button
-            className="w-full bg-red-400 py-2 text-slate-100 hover:bg-red-600"
+            className="w-full bg-red-400 py-2 text-slate-100 hover:bg-red-600 hover:font-bold"
             onClick={retornar}
           >
             Não
           </button>
           <button
-            className="flex w-full items-center justify-center bg-indigo-400 text-slate-100 hover:bg-indigo-600"
+            className="flex w-full items-center justify-center bg-lime-600 text-white hover:bg-lime-800 hover:font-bold"
             onClick={deletarPostagem}
           >
             {isLoading ? (
