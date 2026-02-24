@@ -26,7 +26,11 @@ export function Perfil() {
 
         <img
           className="relative z-10 mx-auto mt-[-8rem] w-56 rounded-full border-8 border-white"
-          src={usuario.foto}
+          src={usuario.foto || "https://ik.imagekit.io/2zvbvzaqt/usuario.png"}
+          onError={(e) =>
+            (e.currentTarget.src =
+              "https://ik.imagekit.io/2zvbvzaqt/usuario.png")
+          }
           alt={`Foto de perfil de ${usuario.nome}`}
         />
 

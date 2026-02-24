@@ -1,5 +1,5 @@
 import {
-  FacebookLogoIcon,
+  GithubLogoIcon,
   InstagramLogoIcon,
   LinkedinLogoIcon,
 } from "@phosphor-icons/react";
@@ -7,6 +7,7 @@ import { useContext, type ReactNode } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 
 export function Footer() {
+  // eslint-disable-next-line prefer-const
   let data = new Date().getFullYear();
 
   const { usuario } = useContext(AuthContext);
@@ -31,8 +32,8 @@ export function Footer() {
             <a href="https://www.instagram.com/mc4rvalho/" target="_blank">
               <InstagramLogoIcon size={48} weight="bold" />
             </a>
-            <a href="#" target="_blank">
-              <FacebookLogoIcon size={48} weight="bold" />
+            <a href="https://github.com/mc4rvalho" target="_blank">
+              <GithubLogoIcon size={48} weight="bold" />
             </a>
           </div>
         </div>

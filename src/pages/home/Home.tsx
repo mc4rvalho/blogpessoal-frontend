@@ -4,8 +4,8 @@ import { ModalPostagem } from "../../components/postagem/modalpostagem/ModalPost
 export function Home() {
   return (
     <>
-      <div className="flex justify-center bg-indigo-900">
-        <div className="container grid grid-cols-2 text-white">
+      <div className="flex justify-center bg-indigo-400">
+        <div className="container grid grid-cols-2 font-bold text-white">
           <div className="flex flex-col items-center justify-center gap-4 py-4">
             <h2 className="text-5xl font-bold">Seja Bem Vindo!</h2>
             <p className="text-xl">Expresse aqui seus pensamentos e opiniões</p>

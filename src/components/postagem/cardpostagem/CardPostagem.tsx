@@ -9,13 +9,20 @@ export function CardPostagem({ postagem }: CardPostagensProps) {
   return (
     <div className="flex flex-col justify-between overflow-hidden rounded border border-slate-900">
       <div>
-        <div className="flex w-full items-center gap-4 bg-indigo-400 px-4 py-2">
+        <div className="flex w-full items-center gap-4 bg-indigo-900 px-4 py-2">
           <img
-            src={postagem.usuario?.foto}
+            src={
+              postagem.usuario?.foto ||
+              "https://ik.imagekit.io/2zvbvzaqt/usuario.png"
+            }
+            onError={(e) =>
+              (e.currentTarget.src =
+                "https://ik.imagekit.io/2zvbvzaqt/usuario.png")
+            }
             className="h-12 rounded-full"
-            alt={postagem.usuario?.nome}
+            alt={`foto do ${postagem.usuario?.nome}`}
           />
-          <h3 className="text-center text-lg font-bold uppercase">
+          <h3 className="text-center text-lg font-bold text-white uppercase">
             {postagem.usuario?.nome}
           </h3>
         </div>
@@ -35,13 +42,13 @@ export function CardPostagem({ postagem }: CardPostagensProps) {
       <div className="flex">
         <Link
           to={`/editarpostagem/${postagem.id}`}
-          className="flex w-full items-center justify-center bg-indigo-400 py-2 text-white hover:bg-indigo-800"
+          className="flex w-full items-center justify-center bg-indigo-400 py-2 text-white hover:bg-indigo-900 hover:font-bold"
         >
           <button>Editar</button>
         </Link>
         <Link
           to={`/deletarpostagem/${postagem.id}`}
-          className="flex w-full items-center justify-center bg-red-400 text-white hover:bg-red-700"
+          className="flex w-full items-center justify-center bg-red-400 text-white hover:bg-red-700 hover:font-bold"
         >
           <button>Deletar</button>
         </Link>
