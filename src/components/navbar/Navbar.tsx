@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, type ReactNode } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 
@@ -13,9 +13,16 @@ export function Navbar() {
     navigate("/");
   }
 
-  return (
-    <>
+  const { usuario } = useContext(AuthContext);
+  
+  let component: ReactNode;
+
+  if (usuario.token !== "") {
+
+    component = (
+
       <div className="flex w-full justify-center bg-indigo-900 py-4 text-white">
+
         <div className="container mx-8 flex justify-between text-lg">
           <Link to="/home" className="text-2xl font-bold">
             Blog Pessoal
@@ -40,6 +47,12 @@ export function Navbar() {
           </div>
         </div>
       </div>
-    </>
+    );
+  }
+
+  return (
+  <>
+  {component}
+  </>
   );
 }
